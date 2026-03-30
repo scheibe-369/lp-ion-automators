@@ -1,0 +1,48 @@
+---
+import { SITE_CONFIG } from '../config/site';
+import CTAButton from './CTAButton.astro';
+---
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-background">
+	<!-- Background glow effect -->
+	<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none animate-glow-pulse"></div>
+	
+	<div class="relative max-w-[1200px] mx-auto px-6 lg:px-8 text-center py-20 lg:py-32">
+		<!-- Badge urgência -->
+		<div class="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-card border-primary/30 text-primary-light text-xs font-semibold tracking-wider uppercase mb-8 shadow-[0_0_20px_rgba(124,58,237,0.2)]" data-animate="fade-in">
+			<span class="relative flex h-2 w-2">
+				<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-warning opacity-75"></span>
+				<span class="relative inline-flex rounded-full h-2 w-2 bg-warning shadow-[0_0_10px_rgba(234,179,8,0.8)]"></span>
+			</span>
+			Turma Inaugural — Vagas Limitadas
+		</div>
+		
+		<!-- Headline -->
+		<h1 class="text-4xl sm:text-5xl lg:text-7xl font-display font-bold leading-[1.1] mb-6 text-white max-w-5xl mx-auto" data-animate="fade-in-up">
+			Domine <span class="text-primary-light">IA Comercial</span> e <span class="text-primary-light">Automação com n8n</span> em 8 Semanas
+		</h1>
+		
+		<!-- Subheadline -->
+		<p class="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed" data-animate="fade-in-up">
+			ION + Automators Club: calls ao vivo semanais com Helio e equipe, suporte a projetos reais, grupo exclusivo e acesso vitalício ao conteúdo gravado.
+		</p>
+		
+		<!-- CTA -->
+		<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8" data-animate="fade-in-up">
+			<CTAButton size="lg" id="hero-cta">
+				Garantir minha vaga na turma inaugural
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+			</CTAButton>
+		</div>
+		
+		<!-- Prova social -->
+		<div class="flex items-center justify-center gap-3 text-text-muted text-sm" data-animate="fade-in">
+			<div class="flex -space-x-2">
+				<div class="w-8 h-8 rounded-full bg-surface-alt border-2 border-background flex items-center justify-center text-xs text-text-muted">👤</div>
+				<div class="w-8 h-8 rounded-full bg-surface-alt border-2 border-background flex items-center justify-center text-xs text-text-muted">👤</div>
+				<div class="w-8 h-8 rounded-full bg-surface-alt border-2 border-background flex items-center justify-center text-xs text-text-muted">👤</div>
+			</div>
+			<span>Junte-se a <strong class="text-white">{SITE_CONFIG.studentCount}+</strong> profissionais que já transformaram seus resultados</span>
+		</div>
+	</div>
+</section>

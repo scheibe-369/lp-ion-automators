@@ -1,0 +1,37 @@
+---
+import SectionHeadline from './SectionHeadline.astro';
+
+const faqs = [
+	{ q: 'Preciso ter experiência com IA ou automação?', a: 'Não. O programa foi desenhado para levar você do zero à implementação. Começamos com os fundamentos e avançamos juntos durante as 8 semanas.' },
+	{ q: 'As calls ao vivo ficam gravadas?', a: 'Sim! Todas as calls são gravadas e ficam disponíveis na sua área de membros com acesso vitalício. Você pode assistir quando quiser.' },
+	{ q: 'Preciso saber programar?', a: 'Não. O n8n é uma ferramenta no-code/low-code. Vamos te ensinar a criar automações poderosas sem escrever código. Para integrações avançadas, ensinamos o básico necessário.' },
+	{ q: 'Quanto tempo preciso dedicar por semana?', a: 'Recomendamos pelo menos 3-4 horas por semana: 1h para a call ao vivo + 2-3h para implementar o que aprendeu. Quanto mais praticar, mais rápido terá resultado.' },
+	{ q: 'Depois das 8 semanas, perco o acesso?', a: 'Não! O acesso ao conteúdo gravado e aos materiais é vitalício. As calls ao vivo são exclusivas das 8 semanas da turma, mas o resto fica para sempre.' },
+	{ q: 'Posso parcelar o pagamento?', a: 'Sim! Oferecemos parcelamento em até 12x no cartão de crédito via Hubla, além da opção de pagamento à vista com desconto via Pix.' },
+	{ q: 'Tem suporte se eu tiver dúvidas fora das calls?', a: 'Sim. Você terá acesso ao grupo exclusivo da turma inaugural onde pode tirar dúvidas, compartilhar progresso e trocar experiências com outros alunos.' },
+	{ q: 'E se eu não gostar?', a: 'Sem problemas. Oferecemos garantia incondicional de 7 dias. Se não for para você, devolvemos 100% do valor investido sem burocracia.' },
+];
+---
+
+<section id="faq" class="py-24 lg:py-32 scroll-mt-20 bg-surface/50">
+	<div class="max-w-[800px] mx-auto px-6 lg:px-8">
+		<SectionHeadline
+			badge="DÚVIDAS FREQUENTES"
+			title="Perguntas <span class='text-primary-light'>respondidas</span>"
+		/>
+
+		<div class="space-y-0 divide-y divide-border" data-animate="fade-in-up">
+			{faqs.map(faq => (
+				<details class="group">
+					<summary class="flex items-center justify-between cursor-pointer py-5 text-white font-semibold text-lg hover:text-primary-light transition-colors list-none [&::-webkit-details-marker]:hidden">
+						<span class="pr-4">{faq.q}</span>
+						<svg class="w-5 h-5 text-text-muted shrink-0 transition-transform duration-200 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+					</summary>
+					<div class="pb-5 text-text-muted leading-relaxed pr-8">
+						{faq.a}
+					</div>
+				</details>
+			))}
+		</div>
+	</div>
+</section>

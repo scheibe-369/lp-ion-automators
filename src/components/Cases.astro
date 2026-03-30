@@ -1,0 +1,40 @@
+---
+import SectionHeadline from './SectionHeadline.astro';
+
+const cases = [
+	{ before: 'Prospecção 100% manual', after: 'Lead scoring automatizado com IA', quote: 'Resultado em 2 semanas de implementação.' },
+	{ before: 'Follow-up esquecido', after: 'Sequência automática via n8n + WhatsApp', quote: 'Nunca mais perdi lead por falta de follow-up.' },
+	{ before: 'Relatórios manuais todo mês', after: 'Dashboard automatizado em tempo real', quote: 'Economizo 8h por semana só com isso.' },
+];
+---
+
+<section id="cases" class="py-24 lg:py-32 scroll-mt-20 bg-surface/50">
+	<div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+		<SectionHeadline
+			badge="RESULTADOS REAIS"
+			title="Transformações de quem <span class='text-primary-light'>já passou por aqui</span>"
+		/>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			{cases.map((c, i) => (
+				<article class="glass-card rounded-xl p-8 hover:border-primary/30 hover:shadow-primary-glow" data-animate="fade-in-up" style={`animation-delay: ${i * 100}ms`}>
+					<div class="space-y-4 mb-6">
+						<div class="flex items-start gap-3">
+							<span class="text-xs font-semibold tracking-wider uppercase text-error bg-error/10 px-2.5 py-1 rounded-full shrink-0">Antes</span>
+							<p class="text-text-muted text-sm">{c.before}</p>
+						</div>
+						<div class="flex items-start gap-3">
+							<span class="text-xs font-semibold tracking-wider uppercase text-success bg-success/10 px-2.5 py-1 rounded-full shrink-0">Depois</span>
+							<p class="text-white text-sm font-medium">{c.after}</p>
+						</div>
+					</div>
+					<div class="border-t border-border pt-4">
+						<p class="text-text-muted text-sm italic">"{c.quote}"</p>
+						<!-- PLACEHOLDER: Substituir com nome e foto real -->
+						<p class="text-text-dark text-xs mt-2">— Aluno(a) da Growth Hub</p>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

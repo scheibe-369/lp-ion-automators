@@ -1,0 +1,23 @@
+---
+interface Props {
+	badge?: string;
+	title: string;
+	subtitle?: string;
+	align?: 'center' | 'left';
+}
+
+const { badge, title, subtitle, align = 'center' } = Astro.props;
+const alignClass = align === 'center' ? 'text-center mx-auto' : 'text-left';
+---
+
+<div class:list={['max-w-3xl mb-12 lg:mb-16', alignClass]}>
+	{badge && (
+		<span class="inline-block text-xs font-semibold tracking-wider uppercase text-primary-light bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full mb-5">
+			{badge}
+		</span>
+	)}
+	<h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white leading-tight mb-4" set:html={title} />
+	{subtitle && (
+		<p class="text-lg sm:text-xl text-text-muted leading-relaxed" set:html={subtitle} />
+	)}
+</div>

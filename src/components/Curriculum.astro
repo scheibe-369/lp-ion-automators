@@ -1,0 +1,67 @@
+---
+import SectionHeadline from './SectionHeadline.astro';
+
+const modules = [
+	'IA aplicada ao funil de vendas completo',
+	'Prospecção e enriquecimento de leads automatizado',
+	'Scripts e templates de IA para outbound, inbound e follow-up',
+	'n8n do zero: instalação, configuração e primeiro workflow',
+	'Integrações reais: WhatsApp, CRM, Email, Planilhas, APIs',
+	'Error handling e logging em produção',
+	'Deploy e monitoramento de automações na cloud',
+	'Análise de dados comerciais com IA generativa',
+];
+
+const extras = [
+	'Templates de workflows n8n prontos para clonar',
+	'Biblioteca de prompts comerciais testados',
+	'Gravação de todas as calls ao vivo',
+	'Materiais complementares e checklists',
+	'Acesso ao grupo exclusivo da turma',
+	'Certificado de conclusão',
+];
+---
+
+<section id="conteudo" class="py-24 lg:py-32 scroll-mt-20 bg-surface/50">
+	<div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+		<SectionHeadline
+			badge="O QUE ESTÁ INCLUSO"
+			title="Tudo que você precisa para <span class='text-primary-light'>dominar IA e automação</span>"
+			subtitle="Conteúdo prático, direto ao ponto, com casos reais do mercado brasileiro."
+		/>
+
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+			<!-- Módulos principais -->
+			<div data-animate="fade-in-up">
+				<h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+					<svg class="w-5 h-5 text-primary-light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+					Conteúdo dos Programas
+				</h3>
+				<ul class="space-y-4">
+					{modules.map(m => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-primary-light mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+							<span class="text-text-muted">{m}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			<!-- Extras -->
+			<div data-animate="fade-in-up" style="animation-delay: 150ms">
+				<h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+					<svg class="w-5 h-5 text-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+					Bônus Inclusos
+				</h3>
+				<ul class="space-y-4">
+					{extras.map(e => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-warning mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+							<span class="text-text-muted">{e}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

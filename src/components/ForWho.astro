@@ -1,0 +1,62 @@
+---
+import SectionHeadline from './SectionHeadline.astro';
+
+const forYou = [
+	'Profissionais de vendas que querem usar IA para vender mais',
+	'Gestores comerciais buscando automatizar processos',
+	'Empreendedores que precisam escalar sem contratar',
+	'Consultores e agências que vendem soluções de automação',
+	'Profissionais de marketing que querem integrar ferramentas',
+	'Quem já tentou n8n sozinho mas travou na implementação',
+];
+
+const notForYou = [
+	'Quem busca dinheiro fácil sem esforço',
+	'Quem não tem disponibilidade para as calls semanais',
+	'Quem não quer colocar a mão na massa',
+	'Quem espera resultados sem implementar',
+];
+---
+
+<section id="para-quem" class="py-24 lg:py-32 scroll-mt-20 bg-surface/50">
+	<div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+		<SectionHeadline
+			badge="PARA QUEM É"
+			title="Esse programa é <span class='text-primary-light'>para você</span>?"
+		/>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+			<!-- Para quem É -->
+			<div class="bg-surface border border-success/20 rounded-xl p-8" data-animate="slide-in-left">
+				<h3 class="text-xl font-semibold text-success mb-6 flex items-center gap-2">
+					<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+					É para você se...
+				</h3>
+				<ul class="space-y-4">
+					{forYou.map(item => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-success mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+							<span class="text-text-muted">{item}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			<!-- Para quem NÃO É -->
+			<div class="bg-surface border border-error/20 rounded-xl p-8" data-animate="slide-in-right">
+				<h3 class="text-xl font-semibold text-error mb-6 flex items-center gap-2">
+					<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+					Não é para você se...
+				</h3>
+				<ul class="space-y-4">
+					{notForYou.map(item => (
+						<li class="flex items-start gap-3">
+							<svg class="w-5 h-5 text-error mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+							<span class="text-text-muted">{item}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

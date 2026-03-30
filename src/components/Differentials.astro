@@ -1,0 +1,62 @@
+---
+import SectionHeadline from './SectionHeadline.astro';
+import Countdown from './Countdown.astro';
+
+const extras = [
+	{
+		icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"/><path d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z"/><path d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L12.707 2.297a1 1 0 0 0-1.414 0z"/><path d="M8.916 17.912a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z"/></svg>`,
+		title: '8 Semanas de Calls ao Vivo',
+		description: 'Encontros semanais com Helio e equipe para tirar dúvidas, revisar projetos e acelerar sua implementação.',
+	},
+	{
+		icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+		title: 'Grupo Exclusivo de Networking',
+		description: 'Comunidade fechada da turma inaugural para troca de experiências, parcerias e oportunidades de negócio.',
+	},
+	{
+		icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>`,
+		title: 'Suporte a Projetos Reais',
+		description: 'Traga seu projeto real para as calls. Receba feedback direto e ajuda na implementação com acompanhamento semanal.',
+	},
+	{
+		icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+		title: 'Acesso Vitalício ao Conteúdo',
+		description: 'Todas as calls gravadas, materiais extras e templates ficam disponíveis para sempre na sua área de membros.',
+	},
+];
+---
+
+<section id="diferencial" class="py-24 lg:py-32 scroll-mt-20">
+	<div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+		<SectionHeadline
+			badge="EXCLUSIVO DA TURMA"
+			title="O que só a <span class='text-primary-light'>Turma Inaugural</span> recebe"
+			subtitle="Além de todo o conteúdo dos dois programas, a turma inaugural tem acesso a extras que não estarão disponíveis depois."
+		/>
+
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mb-16">
+			{extras.map((item, i) => (
+				<div class="flex gap-5 glass-card rounded-xl p-6 hover:border-primary/30 hover:shadow-primary-glow" data-animate="fade-in-up" style={`animation-delay: ${i * 100}ms`}>
+					<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary-light flex items-center justify-center shrink-0">
+						<Fragment set:html={item.icon} />
+					</div>
+					<div>
+						<h3 class="text-white font-semibold text-lg mb-2">{item.title}</h3>
+						<p class="text-text-muted leading-relaxed text-sm">{item.description}</p>
+					</div>
+				</div>
+			))}
+		</div>
+
+		<!-- Urgência + Countdown -->
+		<div class="text-center" data-animate="scale-in">
+			<p class="text-warning font-semibold text-lg mb-6">
+				<svg class="inline w-5 h-5 mr-1.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+				Inscrições encerram em:
+			</p>
+			<div class="flex justify-center">
+				<Countdown />
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,62 @@
+---
+import { SITE_CONFIG } from '../config/site';
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = SITE_CONFIG.siteTitle, 
+	description = SITE_CONFIG.siteDescription 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<!-- Preload Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+		
+		<!-- Open Graph / SEO Basics -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content={SITE_CONFIG.ogImage} />
+	</head>
+	<body>
+		<slot />
+		
+		<!-- 
+			Intersection Observer global setup for CSS animations.
+			Components need to add `data-animate="fade-in"` or similar to be animated.
+		-->
+		<script>
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("animate-in");
+							observer.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.1 }
+			);
+
+			// Em Astro, <script> é "type=module" por default e executa após o parse do DOM.
+			// Portanto não precisamos usar DOMContentLoaded.
+			document.querySelectorAll("[data-animate]").forEach((el) => observer.observe(el));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,77 @@
+---
+import SectionHeadline from './SectionHeadline.astro';
+
+const ionFeatures = [
+	'Prompts de IA aplicados ao processo comercial',
+	'Prospecção e qualificação de leads com IA',
+	'Scripts de vendas inteligentes',
+	'Análise de dados comerciais com GPT',
+	'Automação de follow-up e nurturing',
+	'Integração de IA em CRMs',
+];
+
+const automatorsFeatures = [
+	'n8n do zero ao deploy em produção',
+	'Workflows reais: CRM, WhatsApp, Email',
+	'Integrações com APIs e webhooks',
+	'Automações com error handling robusto',
+	'Deploy e monitoramento em cloud',
+	'Templates prontos para usar',
+];
+---
+
+<section id="solucao" class="py-24 lg:py-32 scroll-mt-20 bg-surface/50">
+	<div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+		<SectionHeadline
+			badge="A SOLUÇÃO"
+			title="Dois programas completos.<br/><span class='text-primary-light'>Um bundle exclusivo.</span>"
+			subtitle="ION para dominar IA em vendas. Automators Club para colocar n8n em produção. Juntos, eles transformam seu processo comercial."
+		/>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8">
+			<!-- Card ION -->
+			<div class="glass-card rounded-xl p-8 border-t-2 border-t-primary" data-animate="slide-in-left">
+				<div class="flex items-center gap-3 mb-2">
+					<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-[#9333EA] flex items-center justify-center">
+						<span class="text-white font-display font-bold text-sm">IO</span>
+					</div>
+					<h3 class="text-2xl font-display font-bold text-white">ION</h3>
+				</div>
+				<p class="text-primary-light text-sm font-medium mb-6">IA aplicada a processos comerciais</p>
+				<ul class="space-y-3">
+					{ionFeatures.map(f => (
+						<li class="flex items-start gap-3 text-text-muted">
+							<svg class="w-5 h-5 text-primary-light mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+							<span>{f}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			<!-- Card Automators -->
+			<div class="glass-card rounded-xl p-8 border-t-2 border-t-text-muted" data-animate="slide-in-right">
+				<div class="flex items-center gap-3 mb-2">
+					<div class="w-10 h-10 rounded-lg bg-surface-alt flex items-center justify-center">
+						<svg class="w-5 h-5 text-text" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6V2H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+					</div>
+					<h3 class="text-2xl font-display font-bold text-white">Automators Club</h3>
+				</div>
+				<p class="text-text-muted text-sm font-medium mb-6">Automação com n8n em produção</p>
+				<ul class="space-y-3">
+					{automatorsFeatures.map(f => (
+						<li class="flex items-start gap-3 text-text-muted">
+							<svg class="w-5 h-5 text-success mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+							<span>{f}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</div>
+
+		<!-- Bundle Banner -->
+		<div class="glass-card border-primary/30 rounded-xl p-6 lg:p-8 text-center" data-animate="scale-in">
+			<p class="text-primary-light font-semibold text-lg mb-1">🎯 Bundle Exclusivo — Turma Inaugural</p>
+			<p class="text-text-muted">Os dois programas completos pelo preço de um. Acesso vitalício + 8 semanas de mentoria ao vivo.</p>
+		</div>
+	</div>
+</section>

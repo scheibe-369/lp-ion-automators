@@ -1,0 +1,31 @@
+---
+import CTAButton from './CTAButton.astro';
+import Countdown from './Countdown.astro';
+---
+
+<section id="cta-final" class="py-24 lg:py-32 scroll-mt-20 relative overflow-hidden">
+	<!-- Background glow -->
+	<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+	<div class="relative max-w-[800px] mx-auto px-6 lg:px-8 text-center">
+		<h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white leading-tight mb-6" data-animate="fade-in-up">
+			Sua transformação começa com <span class="text-primary-light">uma decisão</span>
+		</h2>
+		<p class="text-lg text-text-muted max-w-xl mx-auto mb-8 leading-relaxed" data-animate="fade-in-up">
+			8 semanas de imersão prática. IA + Automação. Calls ao vivo. Suporte real. Acesso vitalício. Turma inaugural com condições exclusivas.
+		</p>
+
+		<div class="mb-10" data-animate="scale-in">
+			<CTAButton size="lg" id="final-cta">
+				Quero fazer parte da turma inaugural
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+			</CTAButton>
+		</div>
+
+		<div class="flex justify-center mb-6" data-animate="fade-in">
+			<Countdown />
+		</div>
+
+		<p class="text-text-dark text-sm">Vagas limitadas. Após o encerramento, a turma inaugural não reabrirá.</p>
+	</div>
+</section>

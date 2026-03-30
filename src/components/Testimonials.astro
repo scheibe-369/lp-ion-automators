@@ -1,0 +1,44 @@
+---
+import SectionHeadline from './SectionHeadline.astro';
+
+const testimonials = [
+	{ name: 'Aluno(a) 1', role: 'Gestor Comercial', text: 'O ION mudou completamente a forma como eu uso IA no meu processo de vendas. Em 3 semanas já tinha automações rodando.' },
+	{ name: 'Aluno(a) 2', role: 'Empreendedor', text: 'O Automators Club me tirou do zero no n8n. Hoje tenho 12 workflows rodando em produção sem precisar de desenvolvedor.' },
+	{ name: 'Aluno(a) 3', role: 'Consultor de Vendas', text: 'As calls ao vivo fazem toda a diferença. Poder trazer meu projeto real e receber feedback direto acelerou muito meu resultado.' },
+	{ name: 'Aluno(a) 4', role: 'Dono de Agência', text: 'Comecei a vender serviços de automação para meus clientes depois do curso. O ROI foi absurdo.' },
+	{ name: 'Aluno(a) 5', role: 'SDR', text: 'Automatizei minha prospecção inteira com n8n + IA. Minha produtividade triplicou sem aumentar horas de trabalho.' },
+	{ name: 'Aluno(a) 6', role: 'Head de Marketing', text: 'A integração de IA nos nossos fluxos de nutrição de leads aumentou nossa taxa de conversão em 40%.' },
+];
+---
+
+<section id="depoimentos" class="py-24 lg:py-32 scroll-mt-20">
+	<div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+		<SectionHeadline
+			badge="DEPOIMENTOS"
+			title="O que nossos alunos <span class='text-primary-light'>estão dizendo</span>"
+		/>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			{testimonials.map((t, i) => (
+				<article class="glass-card rounded-xl p-6 hover:border-primary/30 hover:-translate-y-1" data-animate="fade-in-up" style={`animation-delay: ${i * 80}ms`}>
+					<div class="flex items-center gap-3 mb-4">
+						<!-- PLACEHOLDER: Substituir com foto real -->
+						<div class="w-10 h-10 rounded-full bg-surface-alt flex items-center justify-center text-text-muted text-sm font-semibold">
+							{t.name.charAt(0)}
+						</div>
+						<div>
+							<p class="text-white text-sm font-semibold">{t.name}</p>
+							<p class="text-text-dark text-xs">{t.role}</p>
+						</div>
+					</div>
+					<p class="text-text-muted text-sm leading-relaxed">"{t.text}"</p>
+					<div class="flex gap-0.5 mt-4">
+						{[1,2,3,4,5].map(() => (
+							<svg class="w-4 h-4 text-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+						))}
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

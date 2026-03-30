@@ -1,0 +1,67 @@
+---
+import { SITE_CONFIG, formatPrice } from '../config/site';
+import CTAButton from './CTAButton.astro';
+
+const anchorION = SITE_CONFIG.anchorPriceION;
+const anchorAutomators = SITE_CONFIG.anchorPriceAutomators;
+const anchorTotal = SITE_CONFIG.anchorTotal;
+const bundlePrice = SITE_CONFIG.bundlePrice;
+const installments = SITE_CONFIG.installmentCount;
+const installmentPrice = SITE_CONFIG.installmentPrice;
+---
+
+<section id="preco" class="py-24 lg:py-32 scroll-mt-20 bg-surface/50">
+	<div class="max-w-[800px] mx-auto px-6 lg:px-8 text-center">
+		<span class="inline-block text-xs font-semibold tracking-wider uppercase text-primary-light bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full mb-5">INVESTIMENTO</span>
+
+		<!-- Âncora de preço -->
+		<div class="mb-8" data-animate="fade-in-up">
+			<p class="text-text-muted text-lg mb-4">Se comprados separadamente:</p>
+			<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+				<div class="flex items-center gap-2">
+					<span class="text-text-muted">ION:</span>
+					<span class="text-text-muted line-through">{anchorION > 0 ? formatPrice(anchorION) : 'R$ X.XXX'}</span>
+				</div>
+				<span class="text-text-dark hidden sm:inline">+</span>
+				<div class="flex items-center gap-2">
+					<span class="text-text-muted">Automators:</span>
+					<span class="text-text-muted line-through">{anchorAutomators > 0 ? formatPrice(anchorAutomators) : 'R$ X.XXX'}</span>
+				</div>
+			</div>
+			<p class="text-text-dark">
+				Total separado: <span class="line-through">{anchorTotal > 0 ? formatPrice(anchorTotal) : 'R$ X.XXX'}</span>
+			</p>
+		</div>
+
+		<!-- Preço real -->
+		<div class="glass-card border-2 border-primary/50 shadow-[0_0_50px_rgba(124,58,237,0.15)] rounded-3xl p-8 lg:p-12 relative overflow-hidden mb-8" data-animate="scale-in">
+			<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-[#9333EA] shadow-[0_0_20px_rgba(124,58,237,0.8)]"></div>
+			<div class="absolute top-4 right-4">
+				<span class="text-xs font-semibold tracking-wider uppercase text-warning bg-warning/10 px-3 py-1 rounded-full">TURMA INAUGURAL</span>
+			</div>
+
+			<p class="text-text-muted text-lg mb-2 mt-4">Bundle ION + Automators Club por apenas</p>
+			
+			{bundlePrice > 0 ? (
+				<div class="mb-4">
+					<p class="text-5xl lg:text-6xl font-display font-bold text-white mb-2">{formatPrice(bundlePrice)}</p>
+					{installmentPrice > 0 && (
+						<p class="text-text-muted">ou {installments}x de <span class="text-white font-semibold">{formatPrice(installmentPrice)}</span></p>
+					)}
+				</div>
+			) : (
+				<div class="mb-4">
+					<p class="text-4xl lg:text-5xl font-display font-bold text-white mb-2">Consulte o valor</p>
+					<p class="text-text-muted text-sm">Preço será definido em breve</p>
+				</div>
+			)}
+
+			<CTAButton size="lg" class="w-full sm:w-auto" id="pricing-cta">
+				Garantir minha vaga agora
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+			</CTAButton>
+
+			<p class="text-text-dark text-xs mt-4">Pagamento seguro via Hubla. Acesso imediato após confirmação.</p>
+		</div>
+	</div>
+</section>

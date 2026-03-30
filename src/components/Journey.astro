@@ -1,0 +1,61 @@
+---
+import SectionHeadline from './SectionHeadline.astro';
+
+const steps = [
+	{
+		number: '1',
+		title: 'Compre e acesse imediatamente',
+		description: 'Após a compra, você recebe acesso ao grupo, à plataforma e ao material preparatório no mesmo dia.',
+	},
+	{
+		number: '2',
+		title: 'Prepare-se na semana 0',
+		description: 'Assista ao conteúdo introdutório e configure suas ferramentas (n8n, APIs) antes da primeira call.',
+	},
+	{
+		number: '3',
+		title: 'Participe das 8 calls ao vivo',
+		description: 'A cada semana, uma call com Helio e equipe. Traga dúvidas, projetos reais e implemente junto.',
+	},
+	{
+		number: '4',
+		title: 'Implemente e escale',
+		description: 'Ao final das 8 semanas, você terá processos de IA e automações rodando em produção — com suporte para manter.',
+	},
+];
+---
+
+<section id="jornada" class="py-24 lg:py-32 scroll-mt-20">
+	<div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+		<SectionHeadline
+			badge="SUA JORNADA"
+			title="Do checkout ao resultado <span class='text-primary-light'>em 4 passos</span>"
+			subtitle="Um caminho claro para você sair do zero e ter IA + automação rodando na prática."
+		/>
+
+		<!-- Stepper - vertical mobile, horizontal desktop -->
+		<div class="relative">
+			<!-- Desktop horizontal line -->
+			<div class="hidden lg:block absolute top-8 left-[60px] right-[60px] h-0.5 border-t-2 border-dashed border-border"></div>
+			
+			<div class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6">
+				{steps.map((step, i) => (
+					<div class="relative flex lg:flex-col items-start lg:items-center gap-5 lg:gap-4 text-left lg:text-center" data-animate="fade-in-up" style={`animation-delay: ${i * 150}ms`}>
+						<!-- Number circle -->
+						<div class="relative z-10 w-16 h-16 rounded-full bg-primary text-white font-display font-bold text-2xl flex items-center justify-center shrink-0 shadow-[0_0_30px_rgba(124,58,237,0.3)]">
+							{step.number}
+						</div>
+						<!-- Vertical connector (mobile only) -->
+						{i < steps.length - 1 && (
+							<div class="lg:hidden absolute left-8 top-16 w-0.5 h-8 border-l-2 border-dashed border-border"></div>
+						)}
+						<div>
+							<h3 class="text-white font-semibold text-lg mb-2">{step.title}</h3>
+							<p class="text-text-muted text-sm leading-relaxed">{step.description}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</section>

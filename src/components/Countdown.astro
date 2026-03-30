@@ -1,0 +1,58 @@
+---
+const targetDate = new Date("2026-05-07T23:59:59-03:00").getTime();
+---
+
+<div class="inline-flex items-center gap-3 sm:gap-4" id="countdown-wrapper">
+	<div class="flex flex-col items-center bg-surface border border-border rounded-xl px-4 py-3 min-w-[70px]">
+		<span class="text-3xl sm:text-4xl font-display font-bold text-white countdown-days">00</span>
+		<span class="text-[10px] font-semibold tracking-wider uppercase text-text-muted mt-1">dias</span>
+	</div>
+	<span class="text-text-dark text-2xl font-bold">:</span>
+	<div class="flex flex-col items-center bg-surface border border-border rounded-xl px-4 py-3 min-w-[70px]">
+		<span class="text-3xl sm:text-4xl font-display font-bold text-white countdown-hours">00</span>
+		<span class="text-[10px] font-semibold tracking-wider uppercase text-text-muted mt-1">horas</span>
+	</div>
+	<span class="text-text-dark text-2xl font-bold">:</span>
+	<div class="flex flex-col items-center bg-surface border border-border rounded-xl px-4 py-3 min-w-[70px]">
+		<span class="text-3xl sm:text-4xl font-display font-bold text-white countdown-mins">00</span>
+		<span class="text-[10px] font-semibold tracking-wider uppercase text-text-muted mt-1">min</span>
+	</div>
+	<span class="text-text-dark text-2xl font-bold">:</span>
+	<div class="flex flex-col items-center bg-surface border border-border rounded-xl px-4 py-3 min-w-[70px]">
+		<span class="text-3xl sm:text-4xl font-display font-bold text-white countdown-secs">00</span>
+		<span class="text-[10px] font-semibold tracking-wider uppercase text-text-muted mt-1">seg</span>
+	</div>
+</div>
+
+<script define:vars={{ targetDate }}>
+	function updateCountdown() {
+		const now = Date.now();
+		const diff = targetDate - now;
+
+		if (diff <= 0) {
+			document.querySelectorAll('.countdown-days, .countdown-hours, .countdown-mins, .countdown-secs').forEach(el => el.textContent = '00');
+			const wrapper = document.getElementById('countdown-wrapper');
+			if (wrapper) {
+				const expired = document.createElement('p');
+				expired.className = 'text-error font-semibold text-lg';
+				expired.textContent = 'Inscrições encerradas';
+				wrapper.replaceWith(expired);
+			}
+			return;
+		}
+
+		const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+		const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+		const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+		document.querySelectorAll('.countdown-days').forEach(el => el.textContent = String(days).padStart(2, '0'));
+		document.querySelectorAll('.countdown-hours').forEach(el => el.textContent = String(hours).padStart(2, '0'));
+		document.querySelectorAll('.countdown-mins').forEach(el => el.textContent = String(mins).padStart(2, '0'));
+		document.querySelectorAll('.countdown-secs').forEach(el => el.textContent = String(secs).padStart(2, '0'));
+
+		setTimeout(updateCountdown, 1000 - (Date.now() % 1000));
+	}
+
+	updateCountdown();
+</script>

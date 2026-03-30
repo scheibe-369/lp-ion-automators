@@ -1,0 +1,28 @@
+---
+import { SITE_CONFIG } from '../config/site';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-border/50 backdrop-blur-xl bg-background/80">
+	<div class="max-w-[1200px] mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+		<!-- Logo -->
+		<a href="#hero" class="flex items-center gap-2">
+			<div class="flex items-center gap-1.5">
+				<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-[#9333EA] flex items-center justify-center">
+					<span class="text-white font-display font-bold text-sm">IO</span>
+				</div>
+				<span class="text-white font-display font-bold text-lg">ION</span>
+				<span class="text-text-muted text-sm mx-1">+</span>
+				<span class="text-white font-display font-bold text-lg">AC</span>
+			</div>
+		</a>
+
+		<!-- CTA Sticky -->
+		<a 
+			href={SITE_CONFIG.checkoutURL} 
+			class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-primary to-[#9333EA] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all duration-200 shadow-[0_0_20px_rgba(124,58,237,0.3)]"
+		>
+			Garantir minha vaga
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+		</a>
+	</div>
+</header>
