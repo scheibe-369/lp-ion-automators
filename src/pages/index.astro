@@ -2,20 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import Marquee from '../components/Marquee.astro';
-import Problem from '../components/Problem.astro';
-import Solution from '../components/Solution.astro';
-import Differentials from '../components/Differentials.astro';
-import Curriculum from '../components/Curriculum.astro';
-import Journey from '../components/Journey.astro';
-import ForWho from '../components/ForWho.astro';
-import Instructors from '../components/Instructors.astro';
-import Cases from '../components/Cases.astro';
-import Testimonials from '../components/Testimonials.astro';
-import Pricing from '../components/Pricing.astro';
-import Guarantee from '../components/Guarantee.astro';
-import FAQ from '../components/FAQ.astro';
-import FinalCTA from '../components/FinalCTA.astro';
+import TransformationSection from '../components/combined/TransformationSection.astro';
+import MethodologyBento from '../components/combined/MethodologyBento.astro';
+import HallOfFame from '../components/combined/HallOfFame.astro';
+import SupremeOffer from '../components/combined/SupremeOffer.astro';
 import WhatsAppForm from '../components/WhatsAppForm.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -24,21 +14,11 @@ import Footer from '../components/Footer.astro';
 	<Header />
 	<main>
 		<Hero />
-		<Marquee />
-		<Problem />
-		<Solution />
-		<Differentials />
-		<Curriculum />
-		<Journey />
-		<ForWho />
-		<Instructors />
-		<Cases />
-		<Testimonials />
-		<Pricing />
-		<Guarantee />
-		<FAQ />
-		<FinalCTA />
-		<WhatsAppForm />
+		<TransformationSection />
+		<MethodologyBento />
+		<HallOfFame />
+		<SupremeOffer />
 	</main>
+	<WhatsAppForm />
 	<Footer />
 </Layout>

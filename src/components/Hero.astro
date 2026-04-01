@@ -1,6 +1,7 @@
 ---
 import { SITE_CONFIG } from '../config/site';
 import CTAButton from './CTAButton.astro';
+import Marquee from './Marquee.astro';
 ---
 
 <section id="hero" class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-background">
@@ -44,5 +45,10 @@ import CTAButton from './CTAButton.astro';
 			</div>
 			<span>Junte-se a <strong class="text-white">{SITE_CONFIG.studentCount}+</strong> profissionais que já transformaram seus resultados</span>
 		</div>
+	</div>
+
+	<!-- Marquee Integrado / Glassmorphism -->
+	<div class="absolute bottom-0 left-0 w-full z-10">
+		<Marquee />
 	</div>
 </section>

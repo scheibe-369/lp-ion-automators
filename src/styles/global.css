@@ -87,6 +87,24 @@
     transform: translateY(-2px);
   }
 
+  /* Liquid Glass Effect */
+  .liquid-glass {
+    @apply backdrop-blur-2xl border border-white/10 bg-[#0A0A0B]/40;
+    box-shadow: 
+      0 10px 40px -10px rgba(0, 0, 0, 0.5),
+      inset 0 1px 1px rgba(255, 255, 255, 0.1),
+      inset 0 0 20px rgba(124, 58, 237, 0.05);
+    transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .liquid-glass:hover {
+    @apply border-white/20 bg-[#0A0A0B]/50;
+    box-shadow: 
+      0 20px 50px -10px rgba(0, 0, 0, 0.7),
+      inset 0 1px 2px rgba(255, 255, 255, 0.2),
+      inset 0 0 30px rgba(124, 58, 237, 0.1);
+  }
+
   /* Micro-interaction Button Glow */
   .btn-glow {
     box-shadow: 0 4px 14px 0 var(--color-primary-glow);
@@ -107,7 +125,11 @@
 /* Base Styles and Resets */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Space for the sticky header */
+  scroll-padding-top: 100px; /* Space for the floating sticky header */
+}
+
+.mobile-menu-active {
+  overflow: hidden;
 }
 
 body {

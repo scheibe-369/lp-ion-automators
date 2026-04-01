@@ -2,27 +2,141 @@
 import { SITE_CONFIG } from '../config/site';
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 border-b border-border/50 backdrop-blur-xl bg-background/80">
-	<div class="max-w-[1200px] mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+<header class="fixed top-6 left-0 right-0 z-50 px-6 flex justify-center pointer-events-none">
+	<div class="w-full max-w-[1100px] h-16 rounded-full liquid-glass px-6 lg:px-8 flex items-center justify-between pointer-events-auto relative">
 		<!-- Logo -->
-		<a href="#hero" class="flex items-center gap-2">
-			<div class="flex items-center gap-1.5">
-				<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-[#9333EA] flex items-center justify-center">
+		<a href="#hero" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+			<div class="flex items-center gap-1.5 px-2">
+				<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-[#9333EA] flex items-center justify-center shadow-[0_0_15px_rgba(124,58,237,0.4)]">
 					<span class="text-white font-display font-bold text-sm">IO</span>
 				</div>
-				<span class="text-white font-display font-bold text-lg">ION</span>
-				<span class="text-text-muted text-sm mx-1">+</span>
-				<span class="text-white font-display font-bold text-lg">AC</span>
+				<span class="hidden md:inline-block text-white font-display font-bold text-lg tracking-tight">ION <span class="opacity-30 mx-0.5">+</span> AC</span>
 			</div>
 		</a>
 
-		<!-- CTA Sticky -->
-		<a 
-			href={SITE_CONFIG.checkoutURL} 
-			class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-primary to-[#9333EA] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all duration-200 shadow-[0_0_20px_rgba(124,58,237,0.3)]"
-		>
-			Garantir minha vaga
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-		</a>
+		<!-- Desktop Navigation Links -->
+		<nav class="hidden lg:flex items-center gap-1 bg-black/20 rounded-full p-1 border border-white/5" id="desktop-nav">
+			<a href="#hero" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-text-muted hover:text-white transition-all duration-300">Início</a>
+			<a href="#transformacao" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-text-muted hover:text-white transition-all duration-300">Transformação</a>
+			<a href="#metodologia" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-text-muted hover:text-white transition-all duration-300">Metodologia</a>
+			<a href="#professores-e-alunos" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-text-muted hover:text-white transition-all duration-300">Resultados</a>
+			<a href="#oferta" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-text-muted hover:text-white transition-all duration-300">Oferta</a>
+		</nav>
+
+		<div class="flex items-center gap-3">
+			<!-- CTA Sticky -->
+			<a 
+				href={SITE_CONFIG.checkoutURL} 
+				class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-[#9333EA] text-white text-xs md:text-sm font-semibold px-6 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] border border-white/10"
+			>
+				<span class="hidden sm:inline">Garantir minha vaga</span>
+				<span class="sm:hidden">Inscrever-se</span>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+			</a>
+
+			<!-- Mobile Menu Button -->
+			<button id="menu-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors" aria-label="Menu">
+				<svg id="menu-icon" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+				</svg>
+				<svg id="close-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</button>
+		</div>
+
+		<!-- Mobile Navigation Overlay -->
+		<div id="mobile-nav" class="fixed inset-0 top-[100px] z-[40] hidden px-6 lg:hidden">
+			<div class="glass-card rounded-3xl p-8 border border-white/10 bg-surface/95 backdrop-blur-2xl flex flex-col gap-4 shadow-2xl">
+				<a href="#hero" class="mobile-nav-link text-lg font-semibold text-text-muted hover:text-white py-3 border-b border-white/5 transition-colors">Início</a>
+				<a href="#transformacao" class="mobile-nav-link text-lg font-semibold text-text-muted hover:text-white py-3 border-b border-white/5 transition-colors">Transformação</a>
+				<a href="#metodologia" class="mobile-nav-link text-lg font-semibold text-text-muted hover:text-white py-3 border-b border-white/5 transition-colors">Metodologia</a>
+				<a href="#professores-e-alunos" class="mobile-nav-link text-lg font-semibold text-text-muted hover:text-white py-3 border-b border-white/5 transition-colors">Resultados</a>
+				<a href="#oferta" class="mobile-nav-link text-lg font-semibold text-text-muted hover:text-white py-3 transition-colors">Oferta</a>
+			</div>
+		</div>
 	</div>
 </header>
+
+<style>
+	.nav-link, .mobile-nav-link {
+		transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	.nav-link.active, .mobile-nav-link.active {
+		background-color: rgba(255, 255, 255, 0.1);
+		color: #ffffff;
+		box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+	}
+</style>
+
+<script>
+	const menuToggle = document.getElementById('menu-toggle');
+	const mobileNav = document.getElementById('mobile-nav');
+	const menuIcon = document.getElementById('menu-icon');
+	const closeIcon = document.getElementById('close-icon');
+	const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+	const sections = document.querySelectorAll('section[id]');
+	
+	let isMenuOpen = false;
+
+	function toggleMenu() {
+		isMenuOpen = !isMenuOpen;
+		if (isMenuOpen) {
+			mobileNav?.classList.remove('hidden');
+			menuIcon?.classList.add('hidden');
+			closeIcon?.classList.remove('hidden');
+			document.body.classList.add('mobile-menu-active');
+		} else {
+			mobileNav?.classList.add('hidden');
+			menuIcon?.classList.remove('hidden');
+			closeIcon?.classList.add('hidden');
+			document.body.classList.remove('mobile-menu-active');
+		}
+	}
+
+	menuToggle?.addEventListener('click', toggleMenu);
+
+	// Enhanced Active Link Highlight Logic
+	function updateActiveLink() {
+		let current = '';
+		const scrollPos = window.scrollY;
+
+		// Find the current section
+		sections.forEach(section => {
+			const sectionTop = (section as HTMLElement).offsetTop;
+			const sectionHeight = section.clientHeight;
+			if (scrollPos >= sectionTop - 250) {
+				current = section.getAttribute('id') || '';
+			}
+		});
+
+		// Special case: check if we are at the bottom of the page
+		if ((window.innerHeight + scrollPos) >= document.body.offsetHeight - 50) {
+			current = sections[sections.length - 1].getAttribute('id') || '';
+		}
+
+		navLinks.forEach(link => {
+			link.classList.remove('active');
+			if (link.getAttribute('href') === `#${current}`) {
+				link.classList.add('active');
+			}
+		});
+	}
+
+	// Update on scroll and on initial load
+	window.addEventListener('scroll', updateActiveLink);
+	updateActiveLink(); // Initial call
+
+	// Close menu and update active link instantly when clicking link
+	navLinks.forEach(link => {
+		link.addEventListener('click', (e) => {
+			const targetId = link.getAttribute('href');
+			
+			// Instant visual feedback for click
+			navLinks.forEach(l => l.classList.remove('active'));
+			link.classList.add('active');
+
+			if (isMenuOpen) toggleMenu();
+		});
+	});
+</script>
