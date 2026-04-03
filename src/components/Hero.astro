@@ -20,12 +20,12 @@ import Marquee from './Marquee.astro';
 		
 		<!-- Headline -->
 		<h1 class="text-4xl sm:text-5xl lg:text-7xl font-display font-bold leading-[1.1] mb-6 text-white max-w-5xl mx-auto" data-animate="fade-in-up">
-			Domine <span class="text-primary-light">IA Comercial</span> e <span class="text-primary-light">Automação com n8n</span> em 8 Semanas
+			Domine o <span class="text-primary-light">Vibe coding</span> e <span class="text-primary-light">automações com n8n</span> em 8 semanas
 		</h1>
 		
 		<!-- Subheadline -->
 		<p class="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed" data-animate="fade-in-up">
-			ION + Automators Club: calls ao vivo semanais com Helio e equipe, suporte a projetos reais, grupo exclusivo e acesso vitalício ao conteúdo gravado.
+			Calls ao vivo toda semana, suporte a projetos reais, grupo fechado e acesso vitalício ao que for gravado.
 		</p>
 		
 		<!-- CTA -->
@@ -37,13 +37,19 @@ import Marquee from './Marquee.astro';
 		</div>
 		
 		<!-- Prova social -->
-		<div class="flex items-center justify-center gap-3 text-text-muted text-sm" data-animate="fade-in">
-			<div class="flex -space-x-2">
-				<div class="w-8 h-8 rounded-full bg-surface-alt border-2 border-background flex items-center justify-center text-xs text-text-muted">👤</div>
-				<div class="w-8 h-8 rounded-full bg-surface-alt border-2 border-background flex items-center justify-center text-xs text-text-muted">👤</div>
-				<div class="w-8 h-8 rounded-full bg-surface-alt border-2 border-background flex items-center justify-center text-xs text-text-muted">👤</div>
+		<div class="flex items-center justify-center gap-8 text-text-muted text-sm mt-8 group select-none cursor-pointer" data-animate="fade-in">
+			<div class="flex items-center -space-x-5">
+				<img src="/images/avatars/avatar-1.png" alt="Membro" class="avatar-stack w-10 h-10 rounded-full border-2 border-background object-cover shadow-2xl z-[6]" style="--i:0" />
+				<img src="/images/avatars/avatar-2.jpg" alt="Membro" class="avatar-stack w-10 h-10 rounded-full border-2 border-background object-cover shadow-2xl z-[5]" style="--i:1" />
+				<img src="/images/avatars/avatar-3.png" alt="Membro" class="avatar-stack w-10 h-10 rounded-full border-2 border-background object-cover shadow-2xl z-[4]" style="--i:2" />
+				<img src="/images/avatars/avatar-4.jpg" alt="Membro" class="avatar-stack w-10 h-10 rounded-full border-2 border-background object-cover shadow-2xl z-[3]" style="--i:3" />
+				<img src="/images/avatars/avatar-5.png" alt="Membro" class="avatar-stack w-10 h-10 rounded-full border-2 border-background object-cover shadow-2xl z-[2]" style="--i:4" />
+				<img src="/images/avatars/avatar-6.jpg" alt="Membro" class="avatar-stack w-10 h-10 rounded-full border-2 border-background object-cover shadow-2xl z-[1]" style="--i:5" />
 			</div>
-			<span>Junte-se a <strong class="text-white">{SITE_CONFIG.studentCount}+</strong> profissionais que já transformaram seus resultados</span>
+			<div class="flex flex-col items-start leading-none text-left">
+				<div class="text-white font-bold text-base">+{SITE_CONFIG.studentCount} MEMBROS</div>
+				<div class="text-[10px] tracking-[0.2em] uppercase opacity-70 font-medium">Ativos no club</div>
+			</div>
 		</div>
 	</div>
 
@@ -52,3 +58,19 @@ import Marquee from './Marquee.astro';
 		<Marquee />
 	</div>
 </section>
+
+<style>
+	.avatar-stack {
+		/* Transição suave apenas de posição e cor */
+		transition: transform 0.3s ease-out, border-color 0.3s ease;
+		will-change: transform;
+	}
+
+	/* Interatividade sem expansão de tamanho */
+	.avatar-stack:hover {
+		transform: translateY(-5px);
+		z-index: 100 !important;
+		border-color: #7c3aed !important;
+		box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+	}
+</style>

@@ -18,7 +18,7 @@ export const SITE_CONFIG = {
   whatsappNumber: import.meta.env.PUBLIC_WHATSAPP_NUMBER || "5500000000000",
   
   // Prova social & Textos Extras
-  studentCount: import.meta.env.PUBLIC_STUDENT_COUNT || "X",
+  studentCount: import.meta.env.PUBLIC_STUDENT_COUNT || "3.000",
   
   // Meta e SEO
   siteTitle: "ION + Automators Club — Turma Inaugural",
