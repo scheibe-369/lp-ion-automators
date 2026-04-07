@@ -3,35 +3,87 @@ import { SITE_CONFIG } from '../config/site';
 ---
 
 <header class="fixed top-6 left-0 right-0 z-50 px-6 flex justify-center pointer-events-none">
-	<div class="w-full max-w-[1100px] h-16 rounded-full liquid-glass px-6 lg:px-8 flex items-center justify-between pointer-events-auto relative">
+	<div class="nav-pill w-full max-w-[1100px] h-16 rounded-full px-6 lg:px-8 flex items-center justify-between pointer-events-auto relative">
+
 		<!-- Logo -->
-		<a href="#hero" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-			<div class="flex items-center gap-1.5 px-2">
-				<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-[#9333EA] flex items-center justify-center shadow-[0_0_15px_rgba(124,58,237,0.4)]">
-					<span class="text-white font-display font-bold text-sm">IO</span>
-				</div>
-				<span class="hidden md:inline-block text-white font-display font-bold text-lg tracking-tight">ION <span class="opacity-30 mx-0.5">+</span> AC</span>
+		<a href="#hero" class="flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0">
+			<div class="flex items-center gap-2 lg:gap-3 px-2">
+				<img src="/logos/logo-ion.svg" alt="ION Menu" class="h-16 sm:h-20 w-auto brightness-0 invert opacity-90" />
+				<span class="text-white/30 font-mono text-sm">x</span>
+				<img src="/logos/logo-automators.svg" alt="Automators Menu" class="h-16 sm:h-20 w-auto brightness-0 invert opacity-90 object-contain" />
 			</div>
 		</a>
 
 		<!-- Desktop Navigation Links -->
-		<nav class="hidden lg:flex items-center gap-1 bg-black/20 rounded-full p-1 border border-white/5" id="desktop-nav">
-			<a href="#hero" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-text-muted hover:text-white transition-all duration-300">Início</a>
-			<a href="#transformacao" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-text-muted hover:text-white transition-all duration-300">Transformação</a>
-			<a href="#metodologia" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-text-muted hover:text-white transition-all duration-300">Metodologia</a>
-			<a href="#professores-e-alunos" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-text-muted hover:text-white transition-all duration-300">Resultados</a>
-			<a href="#oferta" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-text-muted hover:text-white transition-all duration-300">Oferta</a>
+		<nav class="hidden lg:flex items-center gap-0" id="desktop-nav">
+
+			<a href="#hero" class="nav-link optn relative">
+				<div class="nav-item-inner">
+					<span class="nav-icon">
+						<!-- Home -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+					</span>
+					<span class="nav-text">Início</span>
+					<span class="nav-underline"></span>
+				</div>
+			</a>
+
+			<a href="#transformacao" class="nav-link optn relative">
+				<div class="nav-item-inner">
+					<span class="nav-icon">
+						<!-- Zap -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+					</span>
+					<span class="nav-text">Transformação</span>
+					<span class="nav-underline"></span>
+				</div>
+			</a>
+
+			<a href="#metodologia" class="nav-link optn relative">
+				<div class="nav-item-inner">
+					<span class="nav-icon">
+						<!-- BookOpen -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+					</span>
+					<span class="nav-text">Metodologia</span>
+					<span class="nav-underline"></span>
+				</div>
+			</a>
+
+			<a href="#professores-e-alunos" class="nav-link optn relative">
+				<div class="nav-item-inner">
+					<span class="nav-icon">
+						<!-- Trophy -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+					</span>
+					<span class="nav-text">Resultados</span>
+					<span class="nav-underline"></span>
+				</div>
+			</a>
+
+			<a href="#oferta" class="nav-link optn relative">
+				<div class="nav-item-inner">
+					<span class="nav-icon">
+						<!-- Tag -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a1 1 0 0 0 1.41 0l7.59-7.59a1 1 0 0 0 0-1.41L12 2z"/><circle cx="7" cy="7" r="1"/></svg>
+					</span>
+					<span class="nav-text">Oferta</span>
+					<span class="nav-underline"></span>
+				</div>
+			</a>
+
 		</nav>
 
-		<div class="flex items-center gap-3">
-			<!-- CTA Sticky -->
-			<a 
-				href={SITE_CONFIG.checkoutURL} 
-				class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-[#9333EA] text-white text-xs md:text-sm font-semibold px-6 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] border border-white/10"
-			>
-				<span class="hidden sm:inline">Garantir minha vaga</span>
-				<span class="sm:hidden">Inscrever-se</span>
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+		<div class="flex items-center gap-3 shrink-0">
+			<!-- CTA Sticky — Bookmark Button -->
+			<a href={SITE_CONFIG.checkoutURL} class="bookmark-btn" aria-label="Garantir Minha Vaga">
+				<span class="icon-container">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon-svg">
+						<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+					</svg>
+				</span>
+				<span class="btn-text hidden sm:block">Garantir Minha Vaga</span>
+				<span class="btn-text sm:hidden">Inscrever-se</span>
 			</a>
 
 			<!-- Mobile Menu Button -->
@@ -59,13 +111,221 @@ import { SITE_CONFIG } from '../config/site';
 </header>
 
 <style>
-	.nav-link, .mobile-nav-link {
+	/* ── Nav Pill (glass container) ─────────────────────────────────── */
+	.nav-pill {
+		background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+		backdrop-filter: blur(25px) saturate(200%);
+		-webkit-backdrop-filter: blur(25px) saturate(200%);
+		border: 1px solid rgba(255,255,255,0.15);
+		box-shadow:
+			0 10px 25px -5px rgba(0,0,0,0.3),
+			0 8px 10px -6px rgba(0,0,0,0.3),
+			inset 0 1px 1px rgba(255,255,255,0.1);
+		animation: navReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+	}
+
+	@keyframes navReveal {
+		from { opacity: 0; transform: scale(0.92) translateY(16px); }
+		to   { opacity: 1; transform: scale(1) translateY(0); }
+	}
+
+	/* ── Nav Item (icon reveal + underline) ─────────────────────────── */
+	.optn {
+		text-decoration: none;
+	}
+
+	.nav-item-inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 8px 20px;
+		position: relative;
+		transition: 0.5s;
+	}
+
+	/* Icon — hidden by default */
+	.nav-icon {
+		opacity: 0;
+		width: 0;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #a78bfa;
+		transform: scale(0.2);
+		transition: opacity 0.8s, width 0.8s, transform 0.8s;
+	}
+
+	.optn:hover .nav-icon {
+		opacity: 1;
+		width: 26px;
+		transform: scale(1.05);
+		margin-right: 6px;
+	}
+
+	/* Text */
+	.nav-text {
+		color: #A1A1AA;
+		font-size: 0.9rem;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		transition: color 0.5s;
+	}
+
+	.optn:hover .nav-text {
+		color: #ffffff;
+	}
+
+	/* Active state */
+	.nav-link.active .nav-text {
+		color: #ffffff;
+	}
+
+	.nav-link.active .nav-icon {
+		opacity: 1;
+		width: 26px;
+		transform: scale(1.05);
+		margin-right: 6px;
+	}
+
+	/* Gradient underline */
+	.nav-underline {
+		position: absolute;
+		bottom: 2px;
+		left: 20px;
+		right: 20px;
+		height: 2px;
+		border-radius: 9999px;
+		background: linear-gradient(90deg, transparent, #8B5CF6, transparent);
+		box-shadow: 0 0 10px rgba(139, 92, 246, 0.8);
+		transform: scaleX(0);
+		opacity: 0;
+		transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s;
+		transform-origin: center;
+	}
+
+	.optn:hover .nav-underline,
+	.nav-link.active .nav-underline {
+		transform: scaleX(1);
+		opacity: 1;
+	}
+
+	/* ── Bookmark CTA Button ─────────────────────────────────────────── */
+	.bookmark-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-start;
+		height: 42px;
+		min-width: 42px;
+		border-radius: 50px;
+		border: 1px solid rgba(124, 58, 237, 0.5);
+		background-color: rgb(10, 10, 11);
+		cursor: pointer;
+		transition: all 0.3s ease;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		text-decoration: none;
+	}
+
+	/* Shimmer border */
+	.bookmark-btn::before {
+		content: "";
+		position: absolute;
+		inset: -1px;
+		border-radius: inherit;
+		padding: 1px;
+		background: linear-gradient(90deg,
+			transparent 0%,
+			rgba(124, 58, 237, 0.2) 25%,
+			rgba(255,255,255,0.9) 50%,
+			rgba(124, 58, 237, 0.2) 75%,
+			transparent 100%);
+		background-size: 200% 100%;
+		-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+		pointer-events: none;
+		opacity: 0;
+		z-index: 5;
+		transition: opacity 0.3s;
+	}
+
+	.bookmark-btn:hover::before {
+		opacity: 1;
+		animation: shimmerBorder 2s infinite ease-in-out;
+	}
+
+	@keyframes shimmerBorder {
+		0%   { background-position: 150% 0; }
+		100% { background-position: -150% 0; }
+	}
+
+	/* Icon container */
+	.icon-container {
+		width: 32px;
+		height: 32px;
+		background: linear-gradient(to bottom, #a78bfa, #7c3aed);
+		border-radius: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		z-index: 2;
+		transition: all 0.3s ease;
+		flex-shrink: 0;
+		margin-left: 5px;
+		position: relative;
+	}
+
+	.bookmark-btn:hover .icon-container {
+		width: calc(100% - 10px);
+		border-radius: 40px;
+	}
+
+	.btn-icon-svg {
+		width: 16px;
+		height: 16px;
+		color: white;
+		transition: 0.3s;
+	}
+
+	.bookmark-btn:hover .btn-icon-svg {
+		animation: arrowNudge 1s infinite ease-in-out;
+	}
+
+	@keyframes arrowNudge {
+		0%, 100% { transform: translateX(0); }
+		50%       { transform: translateX(4px); }
+	}
+
+	/* Button text */
+	.btn-text {
+		color: white;
+		z-index: 1;
+		transition: all 0.3s ease;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		margin-left: 10px;
+		margin-right: 14px;
+		white-space: nowrap;
+	}
+
+	.bookmark-btn:hover .btn-text {
+		opacity: 0;
+		transform: translateX(36px);
+	}
+
+	/* ── Mobile nav link active ──────────────────────────────────────── */
+	.mobile-nav-link {
 		transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
 	}
-	.nav-link.active, .mobile-nav-link.active {
-		background-color: rgba(255, 255, 255, 0.1);
+
+	.mobile-nav-link.active {
 		color: #ffffff;
-		box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
 	}
 </style>
 
@@ -76,7 +336,7 @@ import { SITE_CONFIG } from '../config/site';
 	const closeIcon = document.getElementById('close-icon');
 	const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 	const sections = document.querySelectorAll('section[id]');
-	
+
 	let isMenuOpen = false;
 
 	function toggleMenu() {
@@ -96,21 +356,17 @@ import { SITE_CONFIG } from '../config/site';
 
 	menuToggle?.addEventListener('click', toggleMenu);
 
-	// Enhanced Active Link Highlight Logic
 	function updateActiveLink() {
 		let current = '';
 		const scrollPos = window.scrollY;
 
-		// Find the current section
 		sections.forEach(section => {
 			const sectionTop = (section as HTMLElement).offsetTop;
-			const sectionHeight = section.clientHeight;
 			if (scrollPos >= sectionTop - 250) {
 				current = section.getAttribute('id') || '';
 			}
 		});
 
-		// Special case: check if we are at the bottom of the page
 		if ((window.innerHeight + scrollPos) >= document.body.offsetHeight - 50) {
 			current = sections[sections.length - 1].getAttribute('id') || '';
 		}
@@ -123,19 +379,13 @@ import { SITE_CONFIG } from '../config/site';
 		});
 	}
 
-	// Update on scroll and on initial load
 	window.addEventListener('scroll', updateActiveLink);
-	updateActiveLink(); // Initial call
+	updateActiveLink();
 
-	// Close menu and update active link instantly when clicking link
 	navLinks.forEach(link => {
-		link.addEventListener('click', (e) => {
-			const targetId = link.getAttribute('href');
-			
-			// Instant visual feedback for click
+		link.addEventListener('click', () => {
 			navLinks.forEach(l => l.classList.remove('active'));
 			link.classList.add('active');
-
 			if (isMenuOpen) toggleMenu();
 		});
 	});

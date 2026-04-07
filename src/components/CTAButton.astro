@@ -9,33 +9,110 @@ interface Props {
 	id?: string;
 }
 
-const { 
-	href = SITE_CONFIG.checkoutURL, 
-	variant = 'primary', 
+const {
+	href = SITE_CONFIG.checkoutURL,
+	variant = 'primary',
 	size = 'md',
 	class: className = '',
 	id,
 } = Astro.props;
 
-const baseStyles = 'inline-flex items-center justify-center gap-2 font-semibold rounded-full min-h-[44px] cursor-pointer touch-manipulation z-10 relative';
-
-const variants = {
-	primary: 'bg-primary text-white btn-glow',
-	secondary: 'bg-surface/50 border border-white/10 text-text shadow-sm backdrop-blur-md transition-all duration-200 hover:bg-surface/80 hover:border-white/20 hover:scale-[1.02] active:scale-[0.98]',
-	ghost: 'bg-transparent text-text transition-all duration-200 hover:bg-white/5 active:scale-[0.98]',
-};
-
 const sizes = {
-	sm: 'text-sm px-5 py-2',
-	md: 'text-base px-7 py-3',
-	lg: 'text-lg px-9 py-4',
+	sm: 'cta-btn-sm',
+	md: 'cta-btn-md',
+	lg: 'cta-btn-lg',
 };
 ---
 
-<a 
+<a
 	href={href}
 	id={id}
-	class:list={[baseStyles, variants[variant], sizes[size], className]}
+	class:list={['cta-btn', sizes[size], className]}
 >
 	<slot />
 </a>
+
+<style>
+	.cta-btn {
+		cursor: pointer;
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		font-weight: 700;
+		color: #8B5CF6;
+		border: 2px solid #7C3AED;
+		border-radius: 15.623px;
+		background: transparent;
+		transition: all 1.0s cubic-bezier(0.23, 1, 0.320, 1);
+		overflow: hidden;
+		z-index: 1;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		touch-action: manipulation;
+		min-height: 44px;
+		text-decoration: none;
+	}
+
+	.cta-btn-sm { padding: 8px 20px; font-size: 0.875rem; }
+	.cta-btn-md { padding: 12px 28px; font-size: 1rem; }
+	.cta-btn-lg { padding: 18px 36px; font-size: 1.125rem; }
+
+	/* Radial gradient fill — expands on hover */
+	.cta-btn::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		margin: auto;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		scale: 0;
+		z-index: -1;
+		background: radial-gradient(67.54% 100.03% at 50% 0%, #EDE9FE 0%, #C4B5FD 25.48%, #7C3AED 62.5%, #4C1D95 100%);
+		transition: all 1.5s cubic-bezier(0.23, 1, 0.320, 1);
+	}
+
+	/* Shimmer — activates on hover */
+	.cta-btn::after {
+		content: "";
+		height: 100%;
+		width: 100px;
+		position: absolute;
+		top: 0;
+		left: -150px;
+		opacity: 0;
+		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+		transform: skewX(-20deg);
+		pointer-events: none;
+		z-index: 2;
+	}
+
+	.cta-btn:hover {
+		scale: 1.1;
+		color: #fff;
+		box-shadow: 0 5.98px 23.203px 0 rgba(124, 58, 237, 0.25), 0 14.352px 53.701px 0 rgba(124, 58, 237, 0.45);
+		border-color: white;
+	}
+
+	.cta-btn:hover::before {
+		scale: 8;
+	}
+
+	.cta-btn:hover::after {
+		animation: shimmerEffect 2.2s infinite;
+	}
+
+	.cta-btn:active {
+		scale: 1;
+	}
+
+	@keyframes shimmerEffect {
+		0%   { left: -150px; opacity: 0; }
+		20%  { opacity: 0.6; }
+		50%  { opacity: 0.8; left: 60%; }
+		80%  { opacity: 0.6; }
+		100% { left: 150%; opacity: 0; }
+	}
+</style>

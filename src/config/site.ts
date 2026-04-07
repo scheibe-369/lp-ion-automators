@@ -9,12 +9,12 @@ export const SITE_CONFIG = {
   bundlePrice: parseInt(import.meta.env.PUBLIC_BUNDLE_PRICE || "0"), // A DEFINIR
   installmentCount: parseInt(import.meta.env.PUBLIC_INSTALLMENT_COUNT || "12"),
   installmentPrice: parseInt(import.meta.env.PUBLIC_INSTALLMENT_PRICE || "0"),
-  anchorPriceION: parseInt(import.meta.env.PUBLIC_ANCHOR_ION || "0"),
-  anchorPriceAutomators: parseInt(import.meta.env.PUBLIC_ANCHOR_AUTOMATORS || "0"),
-  anchorTotal: parseInt(import.meta.env.PUBLIC_ANCHOR_TOTAL || "0"),
+  anchorPriceION: parseInt(import.meta.env.PUBLIC_ANCHOR_ION || "19700"),
+  anchorPriceAutomators: parseInt(import.meta.env.PUBLIC_ANCHOR_AUTOMATORS || "19700"),
+  anchorTotal: parseInt(import.meta.env.PUBLIC_ANCHOR_TOTAL || "39400"),
   
   // URLs de redirect
-  checkoutURL: import.meta.env.PUBLIC_CHECKOUT_URL || "https://hub.la/g/PLACEHOLDER",
+  checkoutURL: import.meta.env.PUBLIC_CHECKOUT_URL || "https://pay.hub.la/W13nigVhp9OkUmlv8jfT",
   whatsappNumber: import.meta.env.PUBLIC_WHATSAPP_NUMBER || "5500000000000",
   
   // Prova social & Textos Extras
